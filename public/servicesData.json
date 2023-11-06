@@ -1,0 +1,194 @@
+[
+    {
+        "serviceImage": "https://images.pexels.com/photos/6195956/pexels-photo-6195956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "serviceName": "House Cleaning",
+        "serviceDescription": "Professional house cleaning services for a sparkling, clutter-free home.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "CleanCo Services"
+        },
+        "servicePrice": "$50 per hour",
+        "category": "Cleaning Services"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/6195288/pexels-photo-6195288.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+        "serviceName": "Carpet Cleaning",
+        "serviceDescription": "Expert carpet cleaning to refresh your carpets, removing stains and odors.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "CarpetCare Experts"
+        },
+        "servicePrice": "$80 per room",
+        "category": "Cleaning Services"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/5231237/pexels-photo-5231237.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Lawn Maintenance",
+        "serviceDescription": "Expert lawn care and maintenance services for a beautiful yard.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "GreenThumb Landscaping"
+        },
+        "servicePrice": "$40 per session",
+        "category": "Gardening and Landscaping"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/1590336/pexels-photo-1590336.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Garden Design",
+        "serviceDescription": "Custom garden design and landscaping solutions to enhance your outdoor space.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "Nature's Canvas Gardens"
+        },
+        "servicePrice": "$150 per project",
+        "category": "Gardening and Landscaping"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Plumbing Repairs",
+        "serviceDescription": "Fast and reliable plumbing repair services to fix leaks, clogs, and more.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "PlumbFix Solutions"
+        },
+        "servicePrice": "$60 per hour",
+        "category": "Home Repairs and Maintenance"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Electrical Repairs",
+        "serviceDescription": "Electrical repair services to ensure your home's safety and functionality.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "ElecCare Specialists"
+        },
+        "servicePrice": "$70 per hour",
+        "category": "Home Repairs and Maintenance"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/8432443/pexels-photo-8432443.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Babysitting",
+        "serviceDescription": "Experienced babysitters to care for your children with love and attention.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "HappyHands Babysitters"
+        },
+        "servicePrice": "$15 per hour",
+        "category": "Babysitting and Childcare"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/18870255/pexels-photo-18870255/free-photo-of-teacher-teaching-mathematics-in-a-classroom.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Math Tutoring",
+        "serviceDescription": "Expert math tutoring to help students excel in their studies.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "MathWiz Tutors"
+        },
+        "servicePrice": "$30 per hour",
+        "category": "Tutoring and Homework Help"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/9127740/pexels-photo-9127740.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Language Tutoring",
+        "serviceDescription": "Language tutoring services to improve communication and language skills.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "LingoMasters Tutors"
+        },
+        "servicePrice": "$25 per hour",
+        "category": "Tutoring and Homework Help"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/3217156/pexels-photo-3217156.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Meal Preparation",
+        "serviceDescription": "Delicious, homemade meal preparation for busy individuals and families.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "TastyBites Home Cooks"
+        },
+        "servicePrice": "$50 per meal",
+        "category": "Cooking and Meal Preparation"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/1395966/pexels-photo-1395966.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Catering",
+        "serviceDescription": "Catering services for special occasions and events with a variety of cuisines.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "Culinary Delights Catering"
+        },
+        "servicePrice": "$200 per event",
+        "category": "Cooking and Meal Preparation"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/2204196/pexels-photo-2204196.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Personal Training",
+        "serviceDescription": "Personal fitness training to help you achieve your health and fitness goals.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "FitPro Trainers"
+        },
+        "servicePrice": "$60 per session",
+        "category": "Personal Fitness Training"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/4327043/pexels-photo-4327043.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Yoga Classes",
+        "serviceDescription": "Yoga classes to improve flexibility, strength, and mental well-being.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "Serenity Yoga Instructors"
+        },
+        "servicePrice": "$25 per class",
+        "category": "Personal Fitness Training"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Respite Care",
+        "serviceDescription": "Respite care services for family caregivers to take a break while ensuring quality care for their loved ones.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "Family Relief Caregivers"
+        },
+        "servicePrice": "$30 per hour",
+        "category": "Elderly Care and Companionship"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/4047435/pexels-photo-4047435.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "House Sitting",
+        "serviceDescription": "Reliable house sitting services to protect your home while you're away.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "SecureHome House Sitters"
+        },
+        "servicePrice": "$40 per day",
+        "category": "House Sitting and Home Security"
+    },
+    {
+        "serviceImage": "https://images.pexels.com/photos/5691550/pexels-photo-5691550.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "serviceName": "Home Security System Installation",
+        "serviceDescription": "Professional installation of home security systems for enhanced safety and peace of mind.",
+        "viewDetailButton": "View Details",
+        "serviceProvider": {
+            "providerImage": "https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "providerName": "SafeGuard Security Experts"
+        },
+        "servicePrice": "$300 per installation",
+        "category": "House Sitting and Home Security"
+    }
+]
