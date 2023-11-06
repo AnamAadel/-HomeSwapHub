@@ -46,7 +46,7 @@ function Contact() {
         </htmlForm>
       </div>
 
-      <div className="divide-y divide-gray-200 dark:divide-gray-800 h-full border-2">
+      <div className="divide-y divide-gray-200 dark:divide-gray-800 h-[600px] md:h-full border-2">
         <LocationMap />
         
       </div>

@@ -1,8 +1,11 @@
 import React from 'react'
+import ServiceHero from '../components/services/ServiceHero'
 
 function Services() {
   return (
-    <div>Services</div>
+    <>
+      <ServiceHero />
+    </>
   )
 }
 
