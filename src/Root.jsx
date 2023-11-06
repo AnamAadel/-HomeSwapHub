@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-// import Footer from './components/Footer'
 // import { AuthContexts } from './components/context/AuthContext';
+import Footer from './pages/shared/Footer';
 import Navbar from './pages/shared/Navbar';
 
 function Root() {
@@ -15,7 +15,7 @@ function Root() {
               <>
                 <Navbar />
                 <Outlet />
-                {/* <Footer /> */}
+                <Footer />
               </>
 
 

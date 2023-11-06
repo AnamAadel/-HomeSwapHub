@@ -20,7 +20,7 @@ function OurTeam() {
                 <p className="p-2 text-lg font-medium tracki text-center uppercase">our team</p>
                 <h1 className="text-4xl font-bold leadi text-center sm:text-5xl">Behind the scenes, the skilled individuals work their magic.</h1>
                 <Marquee pauseOnHover={true}>
-                    <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
+                    <div className="flex mt-8">
                         {team && team.map((item, ind) => (
                             <TeamCart item={item} key={ind} />
 
