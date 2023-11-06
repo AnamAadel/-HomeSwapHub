@@ -11,8 +11,13 @@ const axiosServiceData = axios.create({
     withCredentials: true,
 })
 
+const axiosTeamData = axios.create({
+    baseURL: "ourTeamData.json",
+    withCredentials: true,
+})
+
 function useAxiosSecure() {
-  return {axiosSecure, axiosServiceData}
+  return {axiosSecure, axiosServiceData, axiosTeamData}
 }
 
 export default useAxiosSecure
