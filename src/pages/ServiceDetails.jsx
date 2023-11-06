@@ -4,12 +4,10 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineRight } from "react-icons/ai";
 import { BiLogoFacebookCircle, BiLogoInstagramAlt, BiLogoTwitter } from "react-icons/bi";
 import { Link, useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import BrandCard from "../components/BrandCard";
-import Stars from "../components/Stars";
-import { AuthContexts } from "../components/context/AuthContext";
+import { AuthContexts } from "../context/AuthContext";
 
 
-function ProductDetails() {
+function ServiceDetails() {
     const [relatedProduct, setRelatedProduct] = useState([]); 
     const [showSemple, setShowSemple] = useState(0);
     const loaderData = useLoaderData();
@@ -224,4 +222,4 @@ function ProductDetails() {
 
 
 
-export default ProductDetails
+export default ServiceDetails

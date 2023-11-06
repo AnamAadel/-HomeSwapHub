@@ -240,22 +240,21 @@ function AuthProvider({ children }) {
       console.log(currentUser);
 
       async function fetchCurrentUser(){
-        // try {
-        //   const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users/current-user`, {
-        //     method: "POST",
-        //     headers: {
-        //       "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify({email: currentUser?.email})
-        //   });
-        //   const jsonData = await res.json();
-        //   setMongoCurrentUser(jsonData);
-        //   setCartProduct(jsonData.products)
-        //   console.log(jsonData)
-        // } catch (error) {
-        //   console.log(error)
-        // }
-        axiosSecure.post("/users/current-user", {email: currentUser?.email}).then(res => console.log(res.data)).catch(err => console.log(err))
+        try {
+          const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users/current-user`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify({email: currentUser?.email})
+          });
+          const jsonData = await res.json();
+          // setMongoCurrentUser(jsonData);
+          // console.log(jsonData)
+        } catch (error) {
+          console.log(error)
+        }
+        // axiosSecure.post("/users/current-user", {email: currentUser?.email}).then(res => console.log(res.data)).catch(err => console.log(err))
       }
   
       fetchCurrentUser();

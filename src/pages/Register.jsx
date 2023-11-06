@@ -4,7 +4,7 @@ import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { AuthContexts } from "../components/context/AuthContext";
+import { AuthContexts } from "../context/AuthContext";
 
 
 function Register() {

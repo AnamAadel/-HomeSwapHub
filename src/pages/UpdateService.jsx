@@ -1,9 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 
-function AddProduct() {
-
+function UpdateService() {
+  const product = {}
   const navigation = useNavigate();
 
   const handleNavigate = ()=> {
@@ -17,23 +18,21 @@ function AddProduct() {
     const type = e.target.type.value;
     const rating = e.target.rating.value;
     const image = e.target.image.value;
-    const description = e.target.description.value;
     const price = e.target.price.value;
     
-    const product = {name,brand, type, rating, image, description,  price}
+    const coffee = {name,brand, type, rating, image, price}
 
     try {
-        const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/products`, {
-            method: "POST",
+        const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/product/update/${product}`, {
+            method: "put",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(product)
+            body: JSON.stringify(coffee)
         })
         const data = await res.json()
-        console.log(data)
-        if(data.acknowledged){
-          toast.success("Product added successfully!", {
+        if(data.modifiedCount > 0){
+          toast.success("Product successfully!", {
             theme: "colored",
             toastId: "success"
     
@@ -47,11 +46,11 @@ function AddProduct() {
     }
 }
   return (
-      <div className="hero-content flex-col mb-24 mt-12 container mx-auto">
+      <div className="hero-content flex-col mb-24 mt-10 container mx-auto bg-darkGray">
       <ToastContainer />
-      <button className="btn bg-neutral-focus text-white hover:bg-neutral-focus" onClick={handleNavigate}>Go Back</button>
+        <button className="btn bg-neutral-focus text-white hover:bg-neutral-focus" onClick={handleNavigate}>Go Back</button>
         <div className="text-center space-y-4">
-          <h2 className='font-rancho text-4xl text-coffee' style={{ textShadow: "0px 0px 3px #331A15, 2px 2px 10px #331A15, -2px -2px 4px #331A15" }}>Add New Product</h2>
+          <h2 className='font-rancho text-4xl text-coffee' style={{ textShadow: "0px 0px 3px #331A15, 2px 2px 10px #331A15, -2px -2px 4px #331A15" }}>Update Producth2 </h2>
           <p className='font-raleway text-lg font-medium'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
         </div>
         <div className="card flex-shrink-0 w-full">
@@ -60,47 +59,40 @@ function AddProduct() {
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input type="text" placeholder="Enter coffee name" name='name' className="input input-bordered" required />
+              <input type="text" placeholder="Enter coffee name" name='name' defaultValue={product} className="input input-bordered" required />
             </div>
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Brand Name</span>
               </label>
-              <input type="text" name='brand' placeholder="Enter brand name" className="input input-bordered" required />
+              <input type="text" name='brand' placeholder="Enter brand name" defaultValue={product} className="input input-bordered" required />
             </div>
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Type</span>
               </label>
-              <input type="text" name='type' placeholder="Enter product type" className="input input-bordered" required />
+              <input type="text" name='type' placeholder="Enter product" defaultValue={product} className="input input-bordered" required />
             </div>
-            
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Rating</span>
               </label>
-              <input type="text" name='rating' placeholder="Enter rating" className="input input-bordered" required />
+              <input type="number" name='rating' defaultValue={product} placeholder="Enter coffee taste" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Image</span>
               </label>
-              <input type="text" name='image' placeholder="Enter product url" className="input input-bordered" required />
+              <input type="text" name='image' placeholder="Enter coffee url" defaultValue={product} className="input input-bordered" required />
             </div>
-            <div className="form-control ">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Price</span>
               </label>
-              <input type="text" name='price' placeholder="price" className="input input-bordered" required />
-            </div>
-            <div className="form-control col-span-full">
-              <label className="label">
-                <span className="label-text">Description</span>
-              </label>
-              <textarea placeholder="Write description" name="description" className="input input-bordered w-full min-h-16" required />
+              <input type="text" name='price' placeholder="Enter product" defaultValue={product} className="input input-bordered" required />
             </div>
             <div className="form-control mt-6 col-span-full">
-              <button className="btn border-2 border-neutral bg-primary text-coffee" type='submit' >Add Coffee</button>
+              <button className="btn bg-neutral text-white hover:bg-neutral font-rancho" type='submit' >Submit</button>
             </div>
           </form>
         </div>
@@ -108,4 +100,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct
+export default UpdateService

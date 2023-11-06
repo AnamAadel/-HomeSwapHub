@@ -1,0 +1,63 @@
+[
+    {
+      "name": "John Smith",
+      "title": "Manager",
+      "image": "https://example.com/images/john_smith.jpg"
+    },
+    {
+      "name": "Jane Doe",
+      "title": "SEO Specialist",
+      "image": "https://example.com/images/jane_doe.jpg"
+    },
+    {
+      "name": "Michael Johnson",
+      "title": "Web Developer",
+      "image": "https://example.com/images/michael_johnson.jpg"
+    },
+    {
+      "name": "Emily Brown",
+      "title": "Graphic Designer",
+      "image": "https://example.com/images/emily_brown.jpg"
+    },
+    {
+      "name": "David Wilson",
+      "title": "Marketing Coordinator",
+      "image": "https://example.com/images/david_wilson.jpg"
+    },
+    {
+      "name": "Olivia Lee",
+      "title": "Content Writer",
+      "image": "https://example.com/images/olivia_lee.jpg"
+    },
+    {
+      "name": "William Taylor",
+      "title": "Data Analyst",
+      "image": "https://example.com/images/william_taylor.jpg"
+    },
+    {
+      "name": "Ava Miller",
+      "title": "Social Media Manager",
+      "image": "https://example.com/images/ava_miller.jpg"
+    },
+    {
+      "name": "James Anderson",
+      "title": "UI/UX Designer",
+      "image": "https://example.com/images/james_anderson.jpg"
+    },
+    {
+      "name": "Sophia Martin",
+      "title": "Content Manager",
+      "image": "https://example.com/images/sophia_martin.jpg"
+    },
+    {
+      "name": "Daniel Clark",
+      "title": "Sales Representative",
+      "image": "https://example.com/images/daniel_clark.jpg"
+    },
+    {
+      "name": "Isabella White",
+      "title": "HR Specialist",
+      "image": "https://example.com/images/isabella_white.jpg"
+    }
+  ]
+  

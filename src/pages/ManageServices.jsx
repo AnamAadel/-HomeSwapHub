@@ -1,9 +1,8 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
-import BrandCard from '../components/BrandCard';
-import { AuthContexts } from '../components/context/AuthContext';
+import { AuthContexts } from '../context/AuthContext';
 
-function MyCart() {
+function ManageServices() {
     const {cartProduct} = AuthContexts();
   return (
     <div className='container mx-auto grid grid-cols-1 2xl:grid-cols-2'>
@@ -17,4 +16,4 @@ function MyCart() {
   )
 }
 
-export default MyCart
+export default ManageServices

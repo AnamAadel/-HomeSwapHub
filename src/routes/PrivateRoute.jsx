@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Navigate } from 'react-router-dom';
-import { AuthContexts } from '../components/context/AuthContext';
+import { AuthContexts } from '../context/AuthContext';
 
 function PrivateRoute({children}) {
     const {user} = AuthContexts();

@@ -3,8 +3,8 @@ import { useRef, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { AuthContexts } from "../components/context/AuthContext";
-import { app } from "../firebase.config";
+import { AuthContexts } from "../context/AuthContext";
+import { app } from "../../firebase.config";
 
 
 function Login() {
