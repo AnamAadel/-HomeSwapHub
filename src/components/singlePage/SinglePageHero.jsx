@@ -1,18 +1,19 @@
 import React from 'react'
 import LocationMap from '../home/LocationMap'
 
-function SinglePageHero() {
+function SinglePageHero({provider}) {
     return (
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-gray-200 text-center mb-6">Service Provider</h2>
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-4 xl:gap-32">
                 <LocationMap />
 
                 <div className="p-6 bg-gray-50 text-gray-800">
                     <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row-reverse">
-                        <img src="https://source.unsplash.com/75x75/?portrait" alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300" />
+                        <img src={provider?.image} alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 object-cover border-gray-300" />
                         <div className="flex flex-col">
-                            <h4 className="text-lg font-semibold text-center md:text-left">Leroy Jenkins</h4>
-                            <p className="text-gray-600">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.</p>
+                            <h4 className="text-lg font-semibold text-center md:text-left">{provider?.name}</h4>
+                            <p className="text-gray-600">{provider?.description}</p>
                         </div>
                     </div>
                     <div className="flex justify-center pt-4 space-x-4 align-center">

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 function ServiceCart({item}) {
@@ -19,12 +20,12 @@ function ServiceCart({item}) {
                         <img src={item?.serviceProvider?.providerImage} alt="" className="self-center flex-shrink-0 w-12 h-12 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
                             <span className="self-center text-sm">{item?.serviceProvider?.providerName}</span>
                         </div>
-                        <a rel="noopener noreferrer" href="#" className="inline-flex items-center space-x-2 text-sm dark:text-violet-400">
+                        <Link to={`/service/${item._id}`} rel="noopener noreferrer" href="#" className="inline-flex items-center space-x-2 text-sm dark:text-violet-400">
                             <span>View Detail</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
                             </svg>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

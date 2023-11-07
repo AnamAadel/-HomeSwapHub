@@ -35,11 +35,6 @@ import UpdateService from "../pages/UpdateService";
         element: <ManageServices />,
       },
       {
-        
-        path: "/services/:id hg",
-        element: <ServiceDetails />,
-      },
-      {
         path: "/register",
         element: <Register /> ,
       },
@@ -48,8 +43,8 @@ import UpdateService from "../pages/UpdateService";
         element:  <Login />,
       },
       {
-        path: "/services/:id",
-        // loader: ({params})=> fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/products/${params.id}`),
+        path: "/service/:id",
+        loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`),
         element: <ServiceDetails />,
       },
       {
