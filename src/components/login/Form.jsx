@@ -71,7 +71,7 @@ function Form() {
 				<input type={showPassword ? "text": "password"} name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
                 <button className='absolute bottom-3 right-2' type='button' onClick={handleShowPassword}>{showPassword ? <AiFillEye className='text-xl' /> : <AiFillEyeInvisible className='text-xl' />}</button>
 			</div>
-                <p className='font-bold text-sm mt-2'>If You have already registered, Please <Link to="/regoster" className='text-blue-400'>Log in.</Link></p>
+                <p className='font-bold text-sm mt-2'>If You have already registered, Please <Link to="/register" className='text-blue-400'>Log in.</Link></p>
 		</div>
 		<button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-gray-800 text-gray-50">Sign in</button>
 	</form>

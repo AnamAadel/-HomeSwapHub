@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import PropTypes from "prop-types";
 import { createContext, useContext, useEffect, useState } from 'react';
@@ -18,7 +18,6 @@ function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null)
   const [mongoCurrentUser, setMongoCurrentUser] = useState(null)
-  const [cartProduct, setCartProduct] = useState([]);
   const [userPhoto, setUserPhoto] = useState(null);
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
@@ -26,7 +25,7 @@ function AuthProvider({ children }) {
   const storage = getStorage(app)
   const authProviderGoogle = new GoogleAuthProvider();
   const authProviderGithub = new GithubAuthProvider();
-  const authProviderFacebook = new FacebookAuthProvider();
+  const {myBaseUrl} = useAxiosSecure(); 
 
 
   const createUser = (email, password, userName, file) => {
@@ -68,7 +67,7 @@ function AuthProvider({ children }) {
             //   console.log(error)
             // }
             
-            axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
+            myBaseUrl.post("/add_user", user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
           }).catch(error => console.log(error));
@@ -104,6 +103,12 @@ function AuthProvider({ children }) {
         toastId: "success"
 
       });
+
+      const user = { userName: result.user.displayName , email, userImage: result.user.photoURL, creationTime: result.user.metadata.creationTime, lastLoginTime: result.user.metadata.lastSignInTime, status: "active" }
+
+      myBaseUrl.post("/add_user", user).then(res => console.log(res.data)).catch(err => console.log(err))
+
+
     }).catch(error => {
       console.log(error)
       setLoading(false);
@@ -143,21 +148,7 @@ function AuthProvider({ children }) {
 
       const user = { userName: result.user.displayName, email: result.user.email, userImage: result.user.photoURL, creationTime: result.user.metadata.creationTime, lastLoginTime: result.user.metadata.lastSignInTime, status: "active" }
 
-      // try {
-      //   const res = await fetch("https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users", {
-      //     method: "POST",
-      //     headers: {
-      //       "content-type": "application/json"
-      //     },
-      //     body: JSON.stringify(user)
-      //   })
-      //   const data = await res.json()
-      //   console.log(data);
-      // } catch (error) {
-      //   console.log(error)
-      // }
-
-      axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
+      myBaseUrl.post("/add_user",user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
     }).catch(error => {
@@ -178,21 +169,8 @@ function AuthProvider({ children }) {
 
       const user = { userName: result.user.displayName, email: result.user.email, userImage: result.user.photoURL, creationTime: result.user.metadata.creationTime, lastLoginTime: result.user.metadata.lastSignInTime, status: "active" }
       
-      // try {
-      //   const res = await fetch("https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users", {
-      //     method: "POST",
-      //     headers: {
-      //       "content-type": "application/json"
-      //     },
-      //     body: JSON.stringify(user)
-      //   })
-      //   const data = await res.json()
-      //   console.log(data);
-      // } catch (error) {
-      //   console.log(error)
-      // }
 
-      axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
+      axios.post("/add_user",user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
       toast.success("User login successfully!", {
@@ -209,22 +187,10 @@ function AuthProvider({ children }) {
     })
   }
 
-  const handleFacebookSignIn = () => {
-    setLoading(true);
-    signInWithPopup(auth, authProviderFacebook).then(result => {
-      console.log(result);
-      setUser(result.user)
-      setLoading(false);
-    }).catch(error => {
-      console.log(error)
-    })
-  }
-
 
   const authValue = {
     handleGoogleSignIn,
     handleGithubSignIn,
-    handleFacebookSignIn,
     createUser,
     signInUser,
     logOutUser,
@@ -233,8 +199,6 @@ function AuthProvider({ children }) {
     userPhoto,
     userName,
     mongoCurrentUser,
-    cartProduct,
-    setCartProduct
   }
 
   useEffect(() => {
