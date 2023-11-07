@@ -6,12 +6,10 @@ import AddService from "../pages/AddService";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import ManageServices from "../pages/ManageServices";
-import MySchedules from "../pages/MySchedules";
 import Register from "../pages/Register";
 import ServiceDetails from "../pages/ServiceDetails";
 import Services from "../pages/Services";
 import UpdateService from "../pages/UpdateService";
-import PrivateRoute from "./PrivateRoute";
 
 
  const router = createBrowserRouter([
@@ -37,8 +35,9 @@ import PrivateRoute from "./PrivateRoute";
         element: <ManageServices />,
       },
       {
-        path: "/my_schedules",
-        element: <MySchedules />,
+        
+        path: "/services/:id hg",
+        element: <ServiceDetails />,
       },
       {
         path: "/register",
@@ -49,9 +48,9 @@ import PrivateRoute from "./PrivateRoute";
         element:  <Login />,
       },
       {
-        path: "/service_detail/:id",
+        path: "/services/:id",
         // loader: ({params})=> fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/products/${params.id}`),
-        element: <PrivateRoute><ServiceDetails /></PrivateRoute>,
+        element: <ServiceDetails />,
       },
       {
         path: "/products/update/:id",
