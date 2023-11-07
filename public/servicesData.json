@@ -9,7 +9,9 @@
             "providerName": "CleanCo Services"
         },
         "servicePrice": "$50 per hour",
-        "category": "Cleaning Services"
+        "category": "Cleaning Services",
+        "serviceArea": "Area 1",
+        "value": "Value 1"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/6195288/pexels-photo-6195288.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -21,7 +23,9 @@
             "providerName": "CarpetCare Experts"
         },
         "servicePrice": "$80 per room",
-        "category": "Cleaning Services"
+        "category": "Cleaning Services",
+        "serviceArea": "Area 2",
+        "value": "Value 2"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/5231237/pexels-photo-5231237.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -33,7 +37,9 @@
             "providerName": "GreenThumb Landscaping"
         },
         "servicePrice": "$40 per session",
-        "category": "Gardening and Landscaping"
+        "category": "Gardening and Landscaping",
+        "serviceArea": "Area 3",
+        "value": "Value 3"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/1590336/pexels-photo-1590336.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -45,7 +51,9 @@
             "providerName": "Nature's Canvas Gardens"
         },
         "servicePrice": "$150 per project",
-        "category": "Gardening and Landscaping"
+        "category": "Gardening and Landscaping",
+        "serviceArea": "Area 4",
+        "value": "Value 4"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -57,7 +65,9 @@
             "providerName": "PlumbFix Solutions"
         },
         "servicePrice": "$60 per hour",
-        "category": "Home Repairs and Maintenance"
+        "category": "Home Repairs and Maintenance",
+        "serviceArea": "Area 5",
+        "value": "Value 5"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -69,7 +79,9 @@
             "providerName": "ElecCare Specialists"
         },
         "servicePrice": "$70 per hour",
-        "category": "Home Repairs and Maintenance"
+        "category": "Home Repairs and Maintenance",
+        "serviceArea": "Area 6",
+        "value": "Value 6"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/8432443/pexels-photo-8432443.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -81,7 +93,9 @@
             "providerName": "HappyHands Babysitters"
         },
         "servicePrice": "$15 per hour",
-        "category": "Babysitting and Childcare"
+        "category": "Babysitting and Childcare",
+        "serviceArea": "Area 7",
+        "value": "Value 7"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/18870255/pexels-photo-18870255/free-photo-of-teacher-teaching-mathematics-in-a-classroom.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -93,7 +107,9 @@
             "providerName": "MathWiz Tutors"
         },
         "servicePrice": "$30 per hour",
-        "category": "Tutoring and Homework Help"
+        "category": "Tutoring and Homework Help",
+        "serviceArea": "Area 8",
+        "value": "Value 8"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/9127740/pexels-photo-9127740.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -105,7 +121,9 @@
             "providerName": "LingoMasters Tutors"
         },
         "servicePrice": "$25 per hour",
-        "category": "Tutoring and Homework Help"
+        "category": "Tutoring and Homework Help",
+        "serviceArea": "Area 9",
+        "value": "Value 9"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/3217156/pexels-photo-3217156.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -117,7 +135,9 @@
             "providerName": "TastyBites Home Cooks"
         },
         "servicePrice": "$50 per meal",
-        "category": "Cooking and Meal Preparation"
+        "category": "Cooking and Meal Preparation",
+        "serviceArea": "Area 10",
+        "value": "Value 10"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/1395966/pexels-photo-1395966.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -129,7 +149,9 @@
             "providerName": "Culinary Delights Catering"
         },
         "servicePrice": "$200 per event",
-        "category": "Cooking and Meal Preparation"
+        "category": "Cooking and Meal Preparation",
+        "serviceArea": "Area 11",
+        "value": "Value 11"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/2204196/pexels-photo-2204196.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -141,7 +163,9 @@
             "providerName": "FitPro Trainers"
         },
         "servicePrice": "$60 per session",
-        "category": "Personal Fitness Training"
+        "category": "Personal Fitness Training",
+        "serviceArea": "Area 12",
+        "value": "Value 12"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/4327043/pexels-photo-4327043.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -153,7 +177,9 @@
             "providerName": "Serenity Yoga Instructors"
         },
         "servicePrice": "$25 per class",
-        "category": "Personal Fitness Training"
+        "category": "Personal Fitness Training",
+        "serviceArea": "Area 13",
+        "value": "Value 13"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -165,7 +191,9 @@
             "providerName": "Family Relief Caregivers"
         },
         "servicePrice": "$30 per hour",
-        "category": "Elderly Care and Companionship"
+        "category": "Elderly Care and Companionship",
+        "serviceArea": "Area 14",
+        "value": "Value 14"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/4047435/pexels-photo-4047435.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -177,7 +205,9 @@
             "providerName": "SecureHome House Sitters"
         },
         "servicePrice": "$40 per day",
-        "category": "House Sitting and Home Security"
+        "category": "House Sitting and Home Security",
+        "serviceArea": "Area 15",
+        "value": "Value 15"
     },
     {
         "serviceImage": "https://images.pexels.com/photos/5691550/pexels-photo-5691550.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -189,6 +219,8 @@
             "providerName": "SafeGuard Security Experts"
         },
         "servicePrice": "$300 per installation",
-        "category": "House Sitting and Home Security"
+        "category": "House Sitting and Home Security",
+        "serviceArea": "Area 16",
+        "value": "Value 16"
     }
 ]

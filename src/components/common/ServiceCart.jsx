@@ -7,16 +7,17 @@ function ServiceCart({item}) {
             <div className="container grid grid-cols-12 mx-auto dark:bg-gray-900" >
                 <div className="bg-no-repeat bg-cover dark:bg-gray-700 h-[300px] lg:h-auto col-span-full lg:col-span-4" style={{ backgroundImage: `url(${item.serviceImage})`, backgroundPosition: "center center", backgroundBlendMode: "multiply", backgroundSize: "cover" }}></div>
                 <div className="flex flex-col p-6 col-span-full lg:col-span-8 lg:p-10">
-                <div className="flex justify-start">
+                <div className="flex justify-start gap-4">
 				<span className="px-2 py-1 text-xs rounded-full bg-violet-600 text-gray-50">{item.servicePrice}</span>
+				<span className="px-2 py-1 text-xs rounded-full bg-violet-600 text-gray-50">{item.serviceArea}</span>
 			</div>
                     <h1 className="text-3xl font-semibold">{item.serviceName}</h1>
                     <p className="flex-1 pt-2">{item.serviceDescription}.</p>
 
                     <div className="flex items-center justify-between pt-2">
                         <div className="flex space-x-2 gap-6">
-                        <img src={item.serviceProvider.providerImage} alt="" className="self-center flex-shrink-0 w-12 h-12 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
-                            <span className="self-center text-sm">{item.serviceProvider.providerName}</span>
+                        <img src={item?.serviceProvider?.providerImage} alt="" className="self-center flex-shrink-0 w-12 h-12 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
+                            <span className="self-center text-sm">{item?.serviceProvider?.providerName}</span>
                         </div>
                         <a rel="noopener noreferrer" href="#" className="inline-flex items-center space-x-2 text-sm dark:text-violet-400">
                             <span>View Detail</span>

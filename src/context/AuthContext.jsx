@@ -1,3 +1,4 @@
+import axios from "axios";
 import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import PropTypes from "prop-types";
@@ -9,10 +10,11 @@ const myContext = createContext(null);
 
 export const AuthContexts = () => {
   return useContext(myContext);
+
 }
 
 function AuthProvider({ children }) {
-  const axiosSecure = useAxiosSecure();
+  const {rootUrl} = useAxiosSecure();
 
   const [user, setUser] = useState(null)
   const [mongoCurrentUser, setMongoCurrentUser] = useState(null)
@@ -66,7 +68,7 @@ function AuthProvider({ children }) {
             //   console.log(error)
             // }
             
-            axiosSecure.post("/users",user).then(res => console.log(res.data)).catch(err => console.log(err))
+            axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
           }).catch(error => console.log(error));
@@ -155,7 +157,7 @@ function AuthProvider({ children }) {
       //   console.log(error)
       // }
 
-      axiosSecure.post("/users",user).then(res => console.log(res.data)).catch(err => console.log(err))
+      axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
     }).catch(error => {
@@ -190,7 +192,7 @@ function AuthProvider({ children }) {
       //   console.log(error)
       // }
 
-      axiosSecure.post("/users",user).then(res => console.log(res.data)).catch(err => console.log(err))
+      axios.post(rootUrl,user).then(res => console.log(res.data)).catch(err => console.log(err))
 
 
       toast.success("User login successfully!", {
@@ -239,25 +241,26 @@ function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
 
-      async function fetchCurrentUser(){
-        try {
-          const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users/current-user`, {
-            method: "POST",
-            headers: {
-              "content-type": "application/json"
-            },
-            body: JSON.stringify({email: currentUser?.email})
-          });
-          const jsonData = await res.json();
-          // setMongoCurrentUser(jsonData);
-          // console.log(jsonData)
-        } catch (error) {
-          console.log(error)
-        }
-        // axiosSecure.post("/users/current-user", {email: currentUser?.email}).then(res => console.log(res.data)).catch(err => console.log(err))
-      }
+      // async function fetchCurrentUser(){
+      //   try {
+      //     const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users/current-user`, {
+      //       method: "POST",
+      //       headers: {
+      //         "content-type": "application/json"
+      //       },
+      //       body: JSON.stringify({email: currentUser?.email})
+      //     });
+      //     const jsonData = await res.json();
+      //     // setMongoCurrentUser(jsonData);
+      //     // console.log(jsonData)
+      //   } catch (error) {
+      //     console.log(error)
+      //   }
+      // }
+
+      axios.post(`${rootUrl}/users/current-user`, {email: currentUser?.email}).then(res => console.log(res.data)).catch(err => console.log(err))
   
-      fetchCurrentUser();
+      // fetchCurrentUser();
 
 
       setUser(currentUser);
@@ -267,7 +270,7 @@ function AuthProvider({ children }) {
     })
 
     return unsubscribe
-  }, [auth, axiosSecure])
+  }, [auth, axios])
 
   return (
     <myContext.Provider value={authValue}>

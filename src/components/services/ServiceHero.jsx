@@ -6,8 +6,8 @@ function ServiceHero() {
     <img src="https://freedesignresources.net/wp-content/uploads/2023/10/Free-living-room-frame-mockup_momogi_301023_prev01.jpg" className='w-full h-full absolute top-0 left-0 z-[-1]' alt="" />
   <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
     <div className="text-center">
-      <h1 className="text-4xl sm:text-6xl font-bold text-gray-800 dark:text-gray-200">
-        Insights
+      <h1 className="text-4xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200">
+        House Service Exchange
       </h1>
 
       <p className="mt-3 text-gray-600 dark:text-gray-400">

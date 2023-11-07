@@ -6,8 +6,8 @@ const axiosSecure = axios.create({
     withCredentials: true,
 })
 
-const axiosServiceData = axios.create({
-    baseURL: "servicesData.json",
+const myBaseUrl = axios.create({
+    baseURL: "http://localhost:5000",
     withCredentials: true,
 })
 
@@ -16,8 +16,10 @@ const axiosTeamData = axios.create({
     withCredentials: true,
 })
 
+const rootUrl = "http://localhost:5000";
+
 function useAxiosSecure() {
-  return {axiosSecure, axiosServiceData, axiosTeamData}
+  return {axiosSecure, myBaseUrl, axiosTeamData, rootUrl}
 }
 
 export default useAxiosSecure
