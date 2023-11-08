@@ -6,6 +6,7 @@ import AddService from "../pages/AddService";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import ManageServices from "../pages/ManageServices";
+import MySchedules from "../pages/MySchedules";
 import Register from "../pages/Register";
 import ServiceDetails from "../pages/ServiceDetails";
 import Services from "../pages/Services";
@@ -33,6 +34,10 @@ import UpdateService from "../pages/UpdateService";
       {
         path: "/manage_Service",
         element: <ManageServices />,
+      },
+      {
+        path: "/my_schedules",
+        element: <MySchedules />,
       },
       {
         path: "/register",

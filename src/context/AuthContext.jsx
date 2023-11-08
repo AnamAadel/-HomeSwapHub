@@ -14,8 +14,9 @@ export const AuthContexts = () => {
 }
 
 function AuthProvider({ children }) {
-  const {rootUrl} = useAxiosSecure();
-
+  const [searchData, setSearchData] = useState([])
+  
+  console.log(searchData)
   const [user, setUser] = useState(null)
   const [mongoCurrentUser, setMongoCurrentUser] = useState(null)
   const [userPhoto, setUserPhoto] = useState(null);
@@ -25,7 +26,7 @@ function AuthProvider({ children }) {
   const storage = getStorage(app)
   const authProviderGoogle = new GoogleAuthProvider();
   const authProviderGithub = new GithubAuthProvider();
-  const {myBaseUrl} = useAxiosSecure(); 
+  const {myBaseUrl, rootUrl} = useAxiosSecure(); 
 
 
   const createUser = (email, password, userName, file) => {
@@ -199,6 +200,8 @@ function AuthProvider({ children }) {
     userPhoto,
     userName,
     mongoCurrentUser,
+    searchData,
+    setSearchData
   }
 
   useEffect(() => {
@@ -233,8 +236,13 @@ function AuthProvider({ children }) {
       setLoading(false)
     })
 
+    function fetchData(){
+      myBaseUrl.get("/services/all").then(res => setSearchData(res.data)).catch(err => console.log(err))
+  }
+  fetchData()
+
     return unsubscribe
-  }, [auth, axios])
+  }, [auth, myBaseUrl, rootUrl])
 
   return (
     <myContext.Provider value={authValue}>

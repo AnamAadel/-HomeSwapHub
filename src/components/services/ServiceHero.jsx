@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AuthContexts } from '../../context/AuthContext';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 const icons = [
   "https://www.reshot.com/preview-assets/icons/HD5JRFYLPS/cleaning-brush-HD5JRFYLPS.svg",
@@ -12,20 +13,25 @@ const icons = [
   "https://www.reshot.com/preview-assets/icons/WNJC59VR4F/security-WNJC59VR4F.svg"
 
 ]
-function ServiceHero({setSearchService}) {
+function ServiceHero({scroll}) {
   const {myBaseUrl} = useAxiosSecure();
   const [serviceCategories, setServiceCategories] = useState();
+  const {searchData, setSearchData} = AuthContexts();
+  
+
+
 
   const fetchDataByCategory = (type)=> {
-    myBaseUrl.get(`/services/${type}`).then(res => console.log(res.data)).catch((err)=> console.log(err))
-
+    myBaseUrl.get(`/services/${type}`).then(res => setSearchData(res.data)).catch((err)=> console.log(err))
+    scroll()
   }
 
   const handleSearch = (e)=> {
     e.preventDefault()
     const searchValue = e.target.search.value;
-    console.log(searchValue)
-    setSearchService(searchValue);
+    myBaseUrl.post(`/services`, {search: searchValue}).then(res => setSearchData(res.data)).catch(err => console.log(err))
+    // setServiceData(searchValue);
+    scroll();
   }
   useEffect(()=> {
     myBaseUrl.get("/services/categories").then(res => setServiceCategories(res.data)).catch((err)=> console.log(err))
@@ -76,11 +82,11 @@ function ServiceHero({setSearchService}) {
 
       <div className="mt-10 sm:mt-20">
         {serviceCategories && serviceCategories.map((type, ind)=> (
-        <a key={ind} onClick={()=> fetchDataByCategory(type)} className="m-1 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" href="#">
+        <div key={ind} onClick={()=> fetchDataByCategory(type)} className="m-1 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" href="#">
           <img src={icons[ind]} className="w-4" alt="" />
           {type}
-        </a>
-
+        </div>
+ 
         ))}
       </div>
     </div>

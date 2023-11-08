@@ -122,9 +122,14 @@ function ServiceDetails() {
     
   return (
     <>
+      {loaderData && 
+        <>
         <ServiceDetailSection detail={loaderData} isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
         <SinglePageHero provider={loaderData.serviceProvider} />
-        <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
+        <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} detail={loaderData} />
+
+        </>
+    }
     </>
   )
 }

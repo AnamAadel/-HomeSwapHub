@@ -1,7 +1,7 @@
 import React from 'react';
 import BookForm from './BookForm';
 
-function Modal({isOpenModal, setIsOpenModal}) {
+function Modal({isOpenModal, setIsOpenModal, detail}) {
 
   const toggle = isOpenModal ? "flex" : "hidden";
   return (
@@ -10,7 +10,7 @@ function Modal({isOpenModal, setIsOpenModal}) {
   <div className="max-h-full w-full max-w-xl overflow-y-auto sm:rounded-2xl bg-white">
     <div className="w-full">
       <div className="m-8">
-      <BookForm />
+      <BookForm detail={detail} />
       
       </div>
     </div>
