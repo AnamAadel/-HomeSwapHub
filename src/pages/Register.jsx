@@ -12,9 +12,15 @@ function Register() {
     const handleCreateUser = (e) => {
         e.preventDefault()
         const email = e.target.email.value;
+        console.log(email)
         const password = e.target.password.value;
+        console.log(password)
         const userName = e.target.userName.value;
+        console.log(userName)
         const file = e.target.file.files[0]
+        console.log(file)
+
+
 
         const userImage = file ? file : null;
         if (/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{6,}$/.test(password)) {
@@ -44,9 +50,9 @@ function Register() {
                 <div className="container flex flex-col-reverse mx-auto lg:flex-row">
                     <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/2 xl:w-2/5 ">
                         <form onSubmit={handleCreateUser}>
-                            <ServiceInputBox type="text" fieldName="Your Name" value="" isReadOnly={false} name="name" />
+                            <ServiceInputBox type="text" fieldName="Your Name" value="" isReadOnly={false} name="userName" />
 
-                            <ServiceInputBox type="require" fieldName="Your Email" value="" isReadOnly={false} name="name" />
+                            <ServiceInputBox type="require" fieldName="Your Email" value="" isReadOnly={false} name="email" />
 
                             <div className="relative z-0 w-full mb-6 group">
                                 <input type={showPassword ? "text" : "password"} name="password" id="password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gray-800 focus:outline-none focus:ring-0 focus:border-gray-800 peer" placeholder=" " required />
@@ -54,10 +60,10 @@ function Register() {
 
                                 <button className='absolute bottom-3 right-2' type='button' onClick={handleShowPassword}>{showPassword ? <AiFillEye className='text-xl' /> : <AiFillEyeInvisible className='text-xl' />}</button>
                             </div>
-                            <input type="file" name='file' className="file-input file-input-bordered w-full max-w-xs" />
+                            <input type="file" name='file' required className="file-input file-input-bordered w-full max-w-xs inline-block" />
 
-                            <button type="submit" className="text-white bg-gray-800 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-800">Submit</button>
-                            
+                            <button type="submit" className="text-white bg-gray-800 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-800 mt-6 dark:hover:bg-gray-800 dark:focus:ring-gray-800">Submit</button>
+
                         </form>
                     </div>
                     <div className="lg:w-1/2 xl:w-3/5 hidden md:block bg-gray-100">
