@@ -9,6 +9,8 @@ function MySchedules() {
   const [pendingWorks, setPendingWorks] = useState([])
    const {myBaseUrl} = useAxiosSecure();
    const {user} = AuthContexts();
+   
+	const [items, setItems] = useState([]);
 
    console.log(myBooking)
    console.log(pendingWorks)
@@ -31,8 +33,11 @@ function MySchedules() {
   }, [myBaseUrl, user])
   return (
     <>
-      <Header heading={"My Bookings"} />
-      <WorkTable />
+      <Header heading="My Bookings" />
+      <WorkTable data={myBooking} isStatus={false}  />
+
+      <Header heading="Pending works" />
+      <WorkTable data={pendingWorks} setPendingWorks={setPendingWorks} isStatus={true} />
     </>
   )
 }

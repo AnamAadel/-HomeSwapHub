@@ -8,6 +8,10 @@ function ManageServiceSection() {
     const [myServices, setMyServices] = useState([])
     const {user} = AuthContexts();
 
+    const handleDeleteItem = (id)=> {
+      myBaseUrl.delete(`/my_services?email=${user?.email}`).then((res)=> setMyServices(res.data)).catch((err)=> console.log(err))
+    }
+
     useEffect(()=> {
       myBaseUrl.get(`/my_services?email=${user?.email}`).then((res)=> setMyServices(res.data)).catch((err)=> console.log(err))
     },[myBaseUrl, user])

@@ -16,8 +16,9 @@ function BookForm({detail}) {
     const providerEmail = e.target.providerEmail.value;
     const description = e.target.description.value;
     const price = e.target.price.value;
+    const date = e.target.price.date;
 
-    const bookedService = { photoLink, serviceName, description , userEmail , providerEmail, price , status: "pending" }
+    const bookedService = { photoLink, serviceName, description , userEmail , providerEmail, price , date , status: "pending" }
     console.log(bookedService)
 
     myBaseUrl.post(`/book_service`, bookedService).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
