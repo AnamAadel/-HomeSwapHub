@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import ServiceInputBox from "../components/common/ServiceInputBox";
 import TextArea from "../components/common/TextArea";
 import { AuthContexts } from "../context/AuthContext";
@@ -28,7 +28,13 @@ function AddService() {
     const service = {serviceProvider:{ providerName: name, providerImage: user.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending" }
     console.log(service)
 
-    myBaseUrl.post(`/service_add`, service).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
+    myBaseUrl.post(`/service_add`, service).then((res)=> {
+      toast.success("Service added successful.", {
+        theme: "colored",
+        toastId: "success"
+      });
+      console.log(res.data)
+    }).catch((err)=> console.log(err));
 
   }
   return (

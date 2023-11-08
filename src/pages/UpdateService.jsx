@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import ServiceInputBox from '../components/common/ServiceInputBox';
 import TextArea from '../components/common/TextArea';
 import { AuthContexts } from '../context/AuthContext';
@@ -34,7 +34,13 @@ function UpdateService() {
     const service = {serviceProvider:{ providerName: name, providerImage: user.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending" }
     console.log(service)
 
-    myBaseUrl.put(`/service_update/${loadData._id}`, service).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
+    myBaseUrl.put(`/service_update/${loadData._id}`, service).then((res)=>{ 
+      toast.success("Service updated successful.", {
+        theme: "colored",
+        toastId: "success"
+      });
+      console.log(res.data)
+    }).catch((err)=> console.log(err));
 
   
   }
