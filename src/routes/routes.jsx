@@ -53,8 +53,8 @@ import UpdateService from "../pages/UpdateService";
         element: <ServiceDetails />,
       },
       {
-        path: "/products/update/:id",
-        // loader: ({params})=> fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/products/${params.id}`),
+        path: "/service_update/:id",
+        loader: ({params})=> fetch(`http://localhost:5000/service_update/${params.id}`),
         element: <UpdateService />,
       },
     ]

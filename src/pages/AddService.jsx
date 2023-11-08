@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import ServiceInputBox from "../components/common/ServiceInputBox";
 import TextArea from "../components/common/TextArea";
+import { AuthContexts } from "../context/AuthContext";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 function AddService() {
   const {rootUrl, myBaseUrl} = useAxiosSecure()
   const navigation = useNavigate();
+  const {user} = AuthContexts();
 
   const handleNavigate = () => {
     navigation(-1)
@@ -23,35 +25,11 @@ function AddService() {
     const description = e.target.description.value;
     const price = e.target.price.value;
 
-    const service = { name, photoLink, serviceName, description , email , serviceArea, price }
+    const service = {serviceProvider:{ providerName: name, providerImage: user.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending" }
     console.log(service)
 
     myBaseUrl.post(`/service_add`, service).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
 
-    // try {
-    //   const res = await fetch(`http://localhost:5000/service_add`, {
-    //     method: "POST",
-    //     headers: {
-    //       "content-type": "application/json"
-    //     },
-    //     credentials: 'include',
-    //     body: JSON.stringify(service)
-    //   })
-    //   const data = await res.json()
-    //   console.log(data)
-    //   if (data.acknowledged) {
-    //     toast.success("Product added successfully!", {
-    //       theme: "colored",
-    //       toastId: "success"
-
-    //     });
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    //   toast.warn(`An error happened`, {
-    //     theme: "colored"
-    //   });
-    // }
   }
   return (
     <>
@@ -66,8 +44,8 @@ function AddService() {
 				<div className="mt-12 space-y-12">
         
 <form onSubmit={handleHtmlForm}>
-      <ServiceInputBox type="text" name="name" fieldName="Your Name" value="Anamul Amin" isReadOnly={true} />
-      <ServiceInputBox type="email" name="email" fieldName="Email Address" value="Anamul@gmail.com" isReadOnly={true} />
+      <ServiceInputBox type="text" name="name" fieldName="Your Name" value={user?.displayName} isReadOnly={true} />
+      <ServiceInputBox type="email" name="email" fieldName="Email Address" value={user?.email} isReadOnly={true} />
       <ServiceInputBox type="text" name="serviceName" fieldName="Service Name" value="" isReadOnly={false} />
       <ServiceInputBox type="text" name="photoLink" fieldName="Photo Link" value="" isReadOnly={false} />
       <ServiceInputBox type="text" name="price" fieldName="Price" value="" isReadOnly={false} />

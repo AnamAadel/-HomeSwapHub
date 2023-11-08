@@ -11,6 +11,8 @@ import AuthProvider from './context/AuthContext.jsx';
 import './index.css';
 import router from './routes/routes.jsx';
 import('preline');
+
+import "react-toastify/dist/ReactToastify.css";
 // ..
 AOS.init();
 axios.defaults.withCredentials = true

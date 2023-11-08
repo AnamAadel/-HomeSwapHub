@@ -22,7 +22,7 @@ function ServiceHero({scroll}) {
 
 
   const fetchDataByCategory = (type)=> {
-    myBaseUrl.get(`/services/${type}`).then(res => setSearchData(res.data)).catch((err)=> console.log(err))
+    myBaseUrl.get(`/services/type/${type}`).then(res => setSearchData(res.data)).catch((err)=> console.log(err))
     scroll()
   }
 

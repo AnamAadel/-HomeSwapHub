@@ -16,7 +16,7 @@ function BreadCrumb({name}) {
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor" className="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400">
 				<path d="M32 30.031h-32l16-28.061z"></path>
 			</svg>
-			<Link to="/services" rel="noopener noreferrer" href="#" className="flex items-center px-1 capitalize hover:underline">Parent</Link>
+			<Link to="/services" rel="noopener noreferrer" href="#" className="flex items-center px-1 capitalize hover:underline">Services</Link>
 		</li>
 		<li className="flex items-center space-x-2">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor" className="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400">

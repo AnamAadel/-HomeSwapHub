@@ -1,102 +1,75 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import ServiceInputBox from '../components/common/ServiceInputBox';
+import TextArea from '../components/common/TextArea';
+import { AuthContexts } from '../context/AuthContext';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 
 function UpdateService() {
   const product = {}
   const navigation = useNavigate();
+  const loadData = useLoaderData();
+  const {user} = AuthContexts();
+  
+  const {rootUrl, myBaseUrl} = useAxiosSecure()
 
-  const handleNavigate = ()=> {
+  console.log(loadData)
+
+  const handleNavigate = () => {
     navigation(-1)
   }
 
-  const handleForm = async (e)=> {
+  const handleHtmlForm = async (e) => {
     e.preventDefault()
     const name = e.target.name.value;
-    const brand = e.target.brand.value;
-    const type = e.target.type.value;
-    const rating = e.target.rating.value;
-    const image = e.target.image.value;
+    const email = e.target.email.value;
+    const photoLink = e.target.photoLink.value;
+    const serviceName = e.target.serviceName.value;
+    const serviceArea = e.target.serviceArea.value;
+    const description = e.target.description.value;
     const price = e.target.price.value;
-    
-    const coffee = {name,brand, type, rating, image, price}
 
-    try {
-        const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/product/update/${product}`, {
-            method: "put",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(coffee)
-        })
-        const data = await res.json()
-        if(data.modifiedCount > 0){
-          toast.success("Product successfully!", {
-            theme: "colored",
-            toastId: "success"
-    
-          });
-        }
-    } catch (error) {
-        console.log(error)
-        toast.warn(`An error happened`, {
-          theme: "colored"
-        });
-    }
-}
+    const service = {serviceProvider:{ providerName: name, providerImage: user.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending" }
+    console.log(service)
+
+    myBaseUrl.put(`/service_update/${loadData._id}`, service).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
+
+  
+  }
   return (
-      <div className="hero-content flex-col mb-24 mt-10 container mx-auto bg-darkGray">
+    <>
       <ToastContainer />
-        <button className="btn bg-neutral-focus text-white hover:bg-neutral-focus" onClick={handleNavigate}>Go Back</button>
-        <div className="text-center space-y-4">
-          <h2 className='font-rancho text-4xl text-coffee' style={{ textShadow: "0px 0px 3px #331A15, 2px 2px 10px #331A15, -2px -2px 4px #331A15" }}>Update Producth2 </h2>
-          <p className='font-raleway text-lg font-medium'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+      <section className="bg-gray-100 text-gray-800">
+        <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+          <div>
+            <h2 className="text-3xl font-bold tracki text-center sm:text-5xl text-gray-900">Update Your Service</h2>
+          </div>
+          <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <div className="mt-12 space-y-12">
+
+                <form onSubmit={handleHtmlForm}>
+                  <ServiceInputBox type="text" name="name" fieldName="Your Name" value={user?.displayName} isReadOnly={true} />
+                  <ServiceInputBox type="email" name="email" fieldName="Email Address" value={user?.email} isReadOnly={true} />
+                  <ServiceInputBox type="text" name="serviceName" fieldName="Service Name" value={loadData?.serviceName} isReadOnly={false} />
+                  <ServiceInputBox type="text" name="photoLink" fieldName="Photo Link" value={loadData?.serviceImage} isReadOnly={false} />
+                  <ServiceInputBox type="text" name="price" fieldName="Price" value={loadData?.servicePrice} isReadOnly={false} />
+                  <ServiceInputBox type="text" name="serviceArea" fieldName="Service Area" value={loadData?.serviceArea} isReadOnly={false} />
+                  <TextArea value="Description" defaultValue={loadData?.serviceDescription} name="description" />
+                  <button type="submit" className="text-white mt-6 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add Service</button>
+                </form>
+
+              </div>
+            </div>
+            <div aria-hidden="true" className="mt-10 lg:mt-0">
+              <img src="https://source.unsplash.com/random/360x480" alt="" className="mx-auto rounded-lg shadow-lg bg-gray-500" />
+            </div>
+          </div>
         </div>
-        <div className="card flex-shrink-0 w-full">
-          <form className="card-body grid grid-cols-1 md:grid-cols-2" onSubmit={handleForm}>
-            <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input type="text" placeholder="Enter coffee name" name='name' defaultValue={product} className="input input-bordered" required />
-            </div>
-            <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Brand Name</span>
-              </label>
-              <input type="text" name='brand' placeholder="Enter brand name" defaultValue={product} className="input input-bordered" required />
-            </div>
-            <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Type</span>
-              </label>
-              <input type="text" name='type' placeholder="Enter product" defaultValue={product} className="input input-bordered" required />
-            </div>
-            <div className="form-control ">
-              <label className="label">
-                <span className="label-text">Rating</span>
-              </label>
-              <input type="number" name='rating' defaultValue={product} placeholder="Enter coffee taste" className="input input-bordered" required />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Image</span>
-              </label>
-              <input type="text" name='image' placeholder="Enter coffee url" defaultValue={product} className="input input-bordered" required />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Price</span>
-              </label>
-              <input type="text" name='price' placeholder="Enter product" defaultValue={product} className="input input-bordered" required />
-            </div>
-            <div className="form-control mt-6 col-span-full">
-              <button className="btn bg-neutral text-white hover:bg-neutral font-rancho" type='submit' >Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      </section>
+    </>
   )
 }
 

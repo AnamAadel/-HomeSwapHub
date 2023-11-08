@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { AuthContexts } from '../../context/AuthContext';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import ManageServiceCart from './ManageServiceCart';
 
 function ManageServiceSection() {
     const {myBaseUrl} = useAxiosSecure();
     const [myServices, setMyServices] = useState([])
+    const {user} = AuthContexts();
 
     useEffect(()=> {
-      myBaseUrl.get('/my_services').then((res)=> setMyServices(res.data)).catch((err)=> console.log(err))
-    },[myBaseUrl])
+      myBaseUrl.get(`/my_services?email=${user?.email}`).then((res)=> setMyServices(res.data)).catch((err)=> console.log(err))
+    },[myBaseUrl, user])
   return (
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   <div className="grid lg:grid-cols-2 gap-6">
