@@ -13,7 +13,7 @@ function Home() {
     <>
       <Hero />
       <SellingPoints />
-      <ServiceSection showAmount={{number: 4}} isShowAll={true} />
+      <ServiceSection showAmount={6} />
       <Contact />
       <OurTeam />
       <FeatureState />

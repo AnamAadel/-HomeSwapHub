@@ -12,13 +12,20 @@ const icons = [
   "https://www.reshot.com/preview-assets/icons/WNJC59VR4F/security-WNJC59VR4F.svg"
 
 ]
-function ServiceHero() {
+function ServiceHero({setSearchService}) {
   const {myBaseUrl} = useAxiosSecure();
   const [serviceCategories, setServiceCategories] = useState();
 
   const fetchDataByCategory = (type)=> {
     myBaseUrl.get(`/services/${type}`).then(res => console.log(res.data)).catch((err)=> console.log(err))
 
+  }
+
+  const handleSearch = (e)=> {
+    e.preventDefault()
+    const searchValue = e.target.search.value;
+    console.log(searchValue)
+    setSearchService(searchValue);
   }
   useEffect(()=> {
     myBaseUrl.get("/services/categories").then(res => setServiceCategories(res.data)).catch((err)=> console.log(err))
@@ -37,11 +44,11 @@ function ServiceHero() {
       </p>
 
       <div className="mt-7 sm:mt-12 mx-auto max-w-xl relative">
-        <form>
+        <form onSubmit={handleSearch}>
           <div className="relative z-10 flex space-x-3 p-3 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900/[.2]">
             <div className="flex-[1_0_0%]">
-              <label htmlFor="hs-search-article-1" className="block text-sm text-gray-700 font-medium dark:text-white"><span className="sr-only">Search article</span></label>
-              <input type="email" name="hs-search-article-1" id="hs-search-article-1" className="p-3 block w-full border-transparent rounded-md focus:border-gray-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-400" placeholder="Search article" />
+              <label htmlFor="search" className="block text-sm text-gray-700 font-medium dark:text-white"><span className="sr-only">Search article</span></label>
+              <input type="text"  name="search" id="search" className="p-3 block w-full border-transparent rounded-md focus:border-gray-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-400" placeholder="Search article" />
             </div>
             <div className="flex-[0_0_auto]">
               <a className="p-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-gray-700 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" href="#" >
