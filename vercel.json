@@ -1,25 +1,5 @@
 {
-    "version": 2,
     "rewrites": [{ 
-            "source": "/(.*)",
-            "destination": "/" }],
-    "builds": [
-      {
-        "src": "src/*",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "build"
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ],
-    "env": {
-      "REACT_APP_API_URL": "@your-api-url"
-    }
-  }
-  
+        "source": "/(.*)",
+        "destination": "/" }]
+}
