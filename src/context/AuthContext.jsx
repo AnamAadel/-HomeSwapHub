@@ -53,20 +53,7 @@ function AuthProvider({ children }) {
             setLoading(false);
 
             const user = { userName, email, userImage, creationTime: result.user.metadata.creationTime, lastLoginTime: result.user.metadata.lastSignInTime, status: "active" }
-            // try {
-            //   const res = await fetch("https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users", {
-            //     method: "POST",
-            //     headers: {
-            //       "content-type": "application/json"
-            //     },
-            //     body: JSON.stringify(user)
-            //   })
-            //   const data = await res.json()
-            //   console.log(data);
-
-            // } catch (error) {
-            //   console.log(error)
-            // }
+            
             
             myBaseUrl.post("/add_user", user).then(res => console.log(res.data)).catch(err => console.log(err))
 

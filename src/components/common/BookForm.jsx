@@ -1,6 +1,5 @@
 import React from 'react'
-import { ToastContainer } from 'react-toastify'
-import Swal from 'sweetalert2'
+import { ToastContainer, toast } from 'react-toastify'
 import { AuthContexts } from '../../context/AuthContext'
 import useAxiosSecure from '../../hooks/useAxiosSecure'
 import DatePicker from './DatePicker'
@@ -25,12 +24,11 @@ function BookForm({detail}) {
 
     myBaseUrl.post(`/book_service`, bookedService).then((res)=> {
       console.log(res.data)
-      Swal.fire({
-        title: 'Success!',
-        text: 'your book service was completed successfully',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
+      toast.success("your book wes completed successfully!", {
+        theme: "colored",
+        toastId: "success"
+
+      });
     }).catch((err)=> console.log(err));
 
   }

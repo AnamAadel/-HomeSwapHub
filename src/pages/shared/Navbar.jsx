@@ -72,9 +72,10 @@ function Navbar() {
                 </div>
                 <div id="navbar-collapse-with-animation" className={`hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block ${showMenu ? "hidden" : "flex w-full"} bg-white`} >
                     <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7 p-8 sm:p-0 ">
+                        
                         <NavLink to="/" onClick={handleMenu} className="font-medium sm:py-6" aria-current="page">Home</NavLink>
                         <NavLink to="/services"className="font-medium sm:py-6" onClick={handleMenu} aria-current="page" >Services</NavLink>
-
+                        {user &&
                         <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4 group">
                             <button type="button" className="flex items-center w-full /[.8] hover: font-medium">
                                 Dashboard
@@ -92,6 +93,7 @@ function Navbar() {
                                 ))}
                             </div>
                         </div>
+                        }
 
                         <div className="flex items-center gap-x-2 font-medium /[.8] hover: sm:border-l sm:border-white/[.3] sm:my-6 sm:pl-6" href="#">
                             <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

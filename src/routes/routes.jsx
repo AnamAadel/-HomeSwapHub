@@ -11,6 +11,8 @@ import Register from "../pages/Register";
 import ServiceDetails from "../pages/ServiceDetails";
 import Services from "../pages/Services";
 import UpdateService from "../pages/UpdateService";
+import PablicRoute from "./PablicRoute";
+import PrivateRoute from "./PrivateRoute";
 
 
  const router = createBrowserRouter([
@@ -29,33 +31,33 @@ import UpdateService from "../pages/UpdateService";
       },
       {
         path: "/add_service",
-        element: <AddService /> ,
+        element: <PrivateRoute><AddService /></PrivateRoute>  ,
       },
       {
         path: "/manage_Service",
-        element: <ManageServices />,
+        element:  <PrivateRoute><ManageServices /></PrivateRoute>
       },
       {
         path: "/my_schedules",
-        element: <MySchedules />,
+        element:  <PrivateRoute><MySchedules /></PrivateRoute>
       },
       {
         path: "/register",
-        element: <Register /> ,
+        element:  <PablicRoute><Register /></PablicRoute> ,
       },
       {
         path: "/login",
-        element:  <Login />,
+        element:   <PablicRoute><Login /></PablicRoute>,
       },
       {
         path: "/service/:id",
         loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`),
-        element: <ServiceDetails />,
+        element:  <PrivateRoute><ServiceDetails /></PrivateRoute>,
       },
       {
         path: "/service_update/:id",
         loader: ({params})=> fetch(`http://localhost:5000/service_update/${params.id}`),
-        element: <UpdateService />,
+        element: <PrivateRoute><UpdateService /></PrivateRoute>,
       },
     ]
   },

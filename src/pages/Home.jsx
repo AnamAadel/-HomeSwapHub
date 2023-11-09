@@ -5,7 +5,6 @@ import FeatureState from "../components/home/FeatureState";
 import Hero from "../components/home/Hero";
 import OurTeam from "../components/home/OurTeam";
 import SellingPoints from "../components/home/SellingPoints";
-import Testimonials from "../components/home/Testimonials";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
@@ -27,7 +26,6 @@ function Home() {
       <Contact />
       <OurTeam />
      <FeatureState />
-      <Testimonials />
     </>
   )
 }
