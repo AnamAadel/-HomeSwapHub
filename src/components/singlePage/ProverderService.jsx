@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import ServiceCart from "../common/serviceCart";
+import ServiceCart from "../common/ServiceCart";
 
 
-function ProviderService({services}) {
+function ProviderService({ services }) {
     const [providerServices, setProviderServices] = useState();
     const { myBaseUrl } = useAxiosSecure();
     const email = services?.serviceProvider?.providerEmail
@@ -20,11 +20,11 @@ function ProviderService({services}) {
     return (
         <section className="m-4 md:m-8 dark:bg-gray-800 dark:text-gray-100" id="serviceArea">
             <div className="container mx-auto grid justify-center gap-8 xl:grid-cols-2">
-            {providerServices?.length > 1 && providerServices.map((item, ind)=> (
-            <ServiceCart item={item} key={ind} />
+                {providerServices?.length > 1 && providerServices.map((item, ind) => (
+                    <ServiceCart item={item} key={ind} />
 
-            ))
-            }
+                ))
+                }
             </div>
         </section>
     )
