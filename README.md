@@ -1,6 +1,6 @@
 
-The website name: Elegance & Essence Events;
-The website live link: https://ugliest-icicle.surge.sh/
+The website name: House Exchanger;
+The website live link: https://assignment-11-cqrc-3otz6oqhf-aadelbanat8991-gmailcom.vercel.app
 
 ## Frontend Features
 
