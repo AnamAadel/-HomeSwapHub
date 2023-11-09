@@ -23,7 +23,7 @@ function ServiceHero({scroll}) {
 
   const fetchDataByCategory = (type)=> {
     myBaseUrl.get(`/services/type/${type}`).then(res => setSearchData(res.data)).catch((err)=> console.log(err))
-    // scroll()
+    scroll()
   }
 
   const handleSearch = (e)=> {
@@ -31,7 +31,7 @@ function ServiceHero({scroll}) {
     const searchValue = e.target.search.value;
     myBaseUrl.post(`/services`, {search: searchValue}).then(res => setSearchData(res.data)).catch(err => console.log(err))
     // setServiceData(searchValue);
-    // scroll();
+    scroll();
   }
   useEffect(()=> {
     myBaseUrl.get("/services/categories").then(res => setServiceCategories(res.data)).catch((err)=> console.log(err))

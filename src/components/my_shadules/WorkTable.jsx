@@ -57,7 +57,7 @@ function WorkTable({ data, isStatus , setPendingWorks }) {
 						</tr>
 					</thead>
 					<tbody>
-						{data && data.map(item => (
+						{data ? data.map(item => (
 							<tr key={item._id} className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
 								<td className="p-3">
 									<img src={item.photoLink} alt="" className="self-center flex-shrink-0 w-16 h-16 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700 object-cover" />
@@ -84,7 +84,7 @@ function WorkTable({ data, isStatus , setPendingWorks }) {
 								}
 							</tr>
 
-						))}
+						)) : <img src="https://img.freepik.com/premium-vector/no-data-found-empty-file-folder-concept-design-vector-illustration_620585-1698.jpg?w=740" className="max-w-lg mx-auto" alt="" />}
 					</tbody>
 				</table>
 			</div>
