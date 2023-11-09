@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Root from "../Root";
 import AddService from "../pages/AddService";
+import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import ManageServices from "../pages/ManageServices";
@@ -19,7 +20,7 @@ import PrivateRoute from "./PrivateRoute";
   {
     path: "/",
     element: <Root />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -51,12 +52,12 @@ import PrivateRoute from "./PrivateRoute";
       },
       {
         path: "/service/:id",
-        loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`),
+        loader: ({params})=> fetch(`https://back-end-vercel-seven.vercel.app/service/${params.id}`),
         element:  <PrivateRoute><ServiceDetails /></PrivateRoute>,
       },
       {
         path: "/service_update/:id",
-        loader: ({params})=> fetch(`http://localhost:5000/service_update/${params.id}`),
+        loader: ({params})=> fetch(`https://back-end-vercel-seven.vercel.app/service_update/${params.id}`),
         element: <PrivateRoute><UpdateService /></PrivateRoute>,
       },
     ]

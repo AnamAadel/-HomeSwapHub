@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import ServiceInputBox from '../components/common/ServiceInputBox';
 import { AuthContexts } from "../context/AuthContext";
@@ -18,7 +19,6 @@ function Register() {
         const userName = e.target.userName.value;
         console.log(userName)
         const file = e.target.file.files[0]
-        console.log(file)
 
 
 
@@ -61,6 +61,8 @@ function Register() {
                                 <button className='absolute bottom-3 right-2' type='button' onClick={handleShowPassword}>{showPassword ? <AiFillEye className='text-xl' /> : <AiFillEyeInvisible className='text-xl' />}</button>
                             </div>
                             <input type="file" name='file' required className="file-input file-input-bordered w-full max-w-xs inline-block" />
+
+                            <p className='font-bold text-sm mt-2'>If You already have an account, Please <Link to="/login" className='text-blue-400'>Login.</Link></p>
 
                             <button type="submit" className="text-white bg-gray-800 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-800 mt-6 dark:hover:bg-gray-800 dark:focus:ring-gray-800">Submit</button>
 

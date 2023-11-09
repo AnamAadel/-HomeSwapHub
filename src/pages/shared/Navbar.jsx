@@ -54,7 +54,7 @@ const dashboardItem = [
     }, [])
 
     return (
-        <header className="flex relative flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full border-b border-white/[.5] text-sm py-3 sm:py-0 h-20 lg:overflow-hidden bg-white" ref={navbar}>
+        <header className="flex relative flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full border-b border-white/[.5] text-sm py-3 sm:py-0 h-20 bg-white" ref={navbar}>
             <nav className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 h-full" aria-label="Global">
                 <div className="flex items-center justify-between h-full">
                     <a className="flex-none text-xl font-semibold h-full" href="#" aria-label="Brand"><img src="https://www.logodesign.net/logo/barn-trees-and-fields-inside-circle-with-ribbon-537ld.png?nwm=1&nws=1&industry=farmhouse&sf=" className="h-full" /></a>
