@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContexts } from "../../context/AuthContext";
 import useFetchServices from "../../hooks/useFetchServices";
-import ServiceCart from "./serviceCart";
+import ServiceCart from "./ServiceCart";
 
 
-function ServiceSection({services, isShowAll}) {
+function ServiceSection({services , isShowAll}) {
     const serviceData = useFetchServices();
     const {setSearchData} = AuthContexts();
 
