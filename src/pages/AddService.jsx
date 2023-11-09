@@ -25,7 +25,7 @@ function AddService() {
     const description = e.target.description.value;
     const price = e.target.price.value;
 
-    const service = {serviceProvider:{ providerName: name, providerImage: user.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending" }
+    const service = {serviceProvider:{ providerName: name, providerImage: user?.photoURL}, serviceImage: photoLink, serviceName, serviceDescription: description , providerEmail: email , serviceArea, servicePrice: price, status: "pending"  }
     console.log(service)
 
     myBaseUrl.post(`/service_add`, service).then((res)=> {

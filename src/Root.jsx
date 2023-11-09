@@ -20,7 +20,7 @@ function Root() {
             
 
 
-            {loading &&  <div className='min-h-screen w-full fixed z-50 flex justify-center bg-slate-300 items-center'><img src='https://cdn.slidevision.io/www/14304000000085015_loader.gif' className='w-72 mix-blend-multiply' /></div> }
+            {loading &&  <div className='min-h-screen w-full fixed z-50 flex justify-center items-center'><img src='https://cdn.dribbble.com/users/189524/screenshots/2822794/media/f8bf85033e0e686a05fae731f7eef514.gif' /></div> }
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
+import Swal from 'sweetalert2'
 import { AuthContexts } from '../../context/AuthContext'
 import useAxiosSecure from '../../hooks/useAxiosSecure'
 import DatePicker from './DatePicker'
@@ -24,11 +25,12 @@ function BookForm({detail}) {
 
     myBaseUrl.post(`/book_service`, bookedService).then((res)=> {
       console.log(res.data)
-      toast.success("Your booking was completed successfully!", {
-        theme: "colored",
-        toastId: "success"
-
-      });
+      Swal.fire({
+        title: 'Success!',
+        text: 'your book service was completed successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
     }).catch((err)=> console.log(err));
 
   }
@@ -41,7 +43,7 @@ function BookForm({detail}) {
     <form className="mt-6 space-y-4" onSubmit={handleHtmlForm}>
           <ServiceInputBox type="text" fieldName="Service Name" value={detail.serviceName} isReadOnly={true} name="serviceName"  />
           <ServiceInputBox type="text" fieldName="Service Image" value={detail.serviceImage} isReadOnly={true} name="photoLink"  />
-          <ServiceInputBox type="text" fieldName="Service Provider Email" value={detail?.providerEmail ? detail?.providerEmail : "aadelbanat@gmail.com"} isReadOnly={true} name="providerEmail"  />
+          <ServiceInputBox type="text" fieldName="Service Provider Email" value={detail?.providerEmail ? detail?.serviceProvider?.providerEmail : "aadelbanat@gmail.com"} isReadOnly={true} name="providerEmail"  />
           <ServiceInputBox type="text" fieldName="User email" value={user?.email} isReadOnly={true} name="userEmail"  />
           <ServiceInputBox type="text" fieldName="Price" value={detail?.servicePrice} isReadOnly={true} name="price"  />
           <DatePicker fieldName="Take Service Date" name='date' />

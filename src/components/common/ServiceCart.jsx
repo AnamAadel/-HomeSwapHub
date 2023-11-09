@@ -17,7 +17,7 @@ function ServiceCart({item}) {
 
                     <div className="flex items-center justify-between pt-2">
                         <div className="flex space-x-2 gap-6">
-                        <img src={item?.serviceProvider?.providerImage} alt="" className="self-center flex-shrink-0 w-12 h-12 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
+                        <img src={item?.serviceProvider?.providerImage} alt="" className="self-center flex-shrink-0 w-12 h-12 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700 object-cover" />
                             <span className="self-center text-sm">{item?.serviceProvider?.providerName}</span>
                         </div>
                         <Link to={`/service/${item._id}`} rel="noopener noreferrer" href="#" className="inline-flex items-center space-x-2 text-sm dark:text-violet-400">

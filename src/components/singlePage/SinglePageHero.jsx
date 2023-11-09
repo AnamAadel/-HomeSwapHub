@@ -11,10 +11,10 @@ function SinglePageHero({provider}) {
 
                 <div className="p-6 bg-gray-50 text-gray-800">
                     <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row-reverse">
-                        <img src={provider?.image} alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 object-cover border-gray-300" />
+                        <img src={provider?.providerImage} alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 object-cover border-gray-300 ml-8" />
                         <div className="flex flex-col">
-                            <h4 className="text-lg font-semibold text-center md:text-left">{provider?.name}</h4>
-                            <p className="text-gray-600">{provider?.description}</p>
+                            <h4 className="text-lg font-semibold text-center md:text-left">{provider?.providerName}</h4>
+                            <p className="text-gray-600">Service providers offer specialized solutions, meeting diverse needs. From tech support to creative services, they enhance efficiency and convenience.</p>
                         </div>
                     </div>
                     <div className="flex justify-center pt-4 space-x-4 align-center">

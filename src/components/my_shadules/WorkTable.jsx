@@ -48,7 +48,6 @@ function WorkTable({ data, isStatus , setPendingWorks }) {
 						<tr className="text-left">
 							<th className="p-3">Service Image</th>
 							<th className="p-3">Service Name</th>
-							<th className="p-3">service Date</th>
 							<th className="p-3">User Email</th>
 							<th className="p-3">Price</th>
 							{isStatus ?
@@ -65,9 +64,6 @@ function WorkTable({ data, isStatus , setPendingWorks }) {
 								</td>
 								<td className="p-3">
 									<p>{item?.serviceName}</p>
-								</td>
-								<td className="p-3">
-									<p>{item?.serviceDate}</p>
 								</td>
 								<td className="p-3">
 									<p>{item?.userEmail}</p>

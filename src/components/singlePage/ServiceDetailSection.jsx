@@ -7,7 +7,7 @@ function ServiceDetailSection({detail, isOpenModal, setIsOpenModal}) {
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 <BreadCrumb name={detail?.serviceName} />
   <div className="grid grid-cols-1 md:grid-cols-2 justify-center md:gap-12 xl:gap-32">
-      <img className="rounded-xl w-full h-[350px] md:h-[500px] object-cover" src={detail?.serviceImage} alt="Image Description" />
+      <img className="rounded-xl w-full h-[350px] md:h-[500px] object-cover" src={detail.serviceImage} alt="Image Description" />
     
 
     <div className="mt-5 sm:mt-10 lg:mt-0">
