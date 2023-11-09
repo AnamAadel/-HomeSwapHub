@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+    padding: 0;
+    max-width: 100%;
+}
+#banner{
+    background:  linear-gradient(90deg, rgba(2,2,2,0.8547794117647058) 0%, rgba(2,2,2,0.2) 90%, rgba(2,2,2,0) 100%) , url("https://images.pexels.com/photos/3186949/pexels-photo-3186949.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right, top;
+}
