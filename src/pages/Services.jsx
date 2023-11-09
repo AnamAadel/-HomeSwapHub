@@ -5,16 +5,16 @@ import { AuthContexts } from '../context/AuthContext';
 
 function Services() {
   const {searchData} = AuthContexts();
-  const handleClickScroll = () => {
-    const element = document.getElementById('serviceArea');
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const handleClickScroll = () => {
+  //   const element = document.getElementById('serviceArea');
+  //   if (element) {
+  //     // 👇 Will scroll smoothly to the top of the next section
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
   return (
     <>
-      <ServiceHero scroll={handleClickScroll}  />
+      <ServiceHero  />
       <ServiceSection services={searchData} isShowAll={false} />
     </>
   )

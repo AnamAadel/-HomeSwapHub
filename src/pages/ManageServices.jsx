@@ -6,7 +6,6 @@ import { AuthContexts } from '../context/AuthContext';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 
 function ManageServices() {
-    const {cartProduct} = AuthContexts();
   return (
     <div className='container mx-auto grid grid-cols-1 2xl:grid-cols-2'>
     <ToastContainer />

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
-import ServiceSection from "../components/common/ServiceSection"
-import Contact from "../components/home/Contact"
-import FeatureState from "../components/home/FeatureState"
-import Hero from "../components/home/Hero"
-import OurTeam from "../components/home/OurTeam"
-import SellingPoints from "../components/home/SellingPoints"
-import Testimonials from "../components/home/Testimonials"
-import useAxiosSecure from "../hooks/useAxiosSecure"
+import { useEffect, useState } from "react";
+import ServiceSection from "../components/common/ServiceSection";
+import Contact from "../components/home/Contact";
+import FeatureState from "../components/home/FeatureState";
+import Hero from "../components/home/Hero";
+import OurTeam from "../components/home/OurTeam";
+import SellingPoints from "../components/home/SellingPoints";
+import Testimonials from "../components/home/Testimonials";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 function Home() {
@@ -22,11 +22,11 @@ function Home() {
   return (
     <>
       <Hero />
-      <SellingPoints />
+       <SellingPoints />
       <ServiceSection services={services} isShowAll={true} />
       <Contact />
       <OurTeam />
-      <FeatureState />
+     <FeatureState />
       <Testimonials />
     </>
   )

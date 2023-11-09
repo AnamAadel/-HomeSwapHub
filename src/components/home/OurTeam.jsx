@@ -5,15 +5,15 @@ import TeamCart from '../common/TeamCart';
 
 function OurTeam() {
     const [team, setTeam] = useState([]);
-    const { axiosTeamData } = useAxiosSecure();
+    const { myBaseUrl } = useAxiosSecure();
     console.log(team)
 
     useEffect(() => {
         function fetchData() {
-            axiosTeamData.get().then(res => setTeam(res.data)).catch(err => console.log(err))
+            myBaseUrl.get("/our_teams").then(res => setTeam(res.data)).catch(err => console.log(err))
         }
         fetchData()
-    }, [axiosTeamData])
+    }, [myBaseUrl])
     return (
         <section className="py-6 bg-slate-100 text-gray-800">
             <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">

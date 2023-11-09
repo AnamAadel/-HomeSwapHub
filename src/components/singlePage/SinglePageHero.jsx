@@ -4,6 +4,7 @@ import LocationMap from '../home/LocationMap'
 function SinglePageHero({provider}) {
     return (
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        
                 <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-gray-200 text-center mb-6">Service Provider</h2>
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-4 xl:gap-32">
                 <LocationMap />

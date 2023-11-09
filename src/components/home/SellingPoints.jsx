@@ -3,14 +3,14 @@ import { FaStarOfLife } from "react-icons/fa";
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 function SellingPoints() {
-    const {axiosSecure} = useAxiosSecure();
+    const {myBaseUrl} = useAxiosSecure();
     const [sellingPoints, setSellingPoint]  = useState([]);
     useEffect(()=> {
         function fetchData(){
-            axiosSecure.get().then(res => setSellingPoint(res.data)).catch(err => console.log(err))
+            myBaseUrl.get("/selling_points").then(res => setSellingPoint(res.data)).catch(err => console.log(err))
         }
         fetchData()
-    },[axiosSecure])
+    },[myBaseUrl])
     return (
         <section className="m-4 md:m-8 dark:bg-gray-800 dark:text-gray-100">
             <div className="container mx-auto p-4 my-6 space-y-2 text-center">

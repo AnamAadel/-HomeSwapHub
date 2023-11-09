@@ -122,6 +122,8 @@ function AuthProvider({ children }) {
   const logOutUser = () => {
     signOut(auth).then(() => {
       // 
+      myBaseUrl.delete("/logout").then(res => console.log(res.data)).catch(err => console.log(err));
+
       toast.success("Sign-out successful.", {
         theme: "colored",
         toastId: "success"
@@ -207,28 +209,6 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
-
-      // async function fetchCurrentUser(){
-      //   try {
-      //     const res = await fetch(`https://assignment-10-server-6yim5dfbc-aadelbanat8991-gmailcom.vercel.app/users/current-user`, {
-      //       method: "POST",
-      //       headers: {
-      //         "content-type": "application/json"
-      //       },
-      //       body: JSON.stringify({email: currentUser?.email})
-      //     });
-      //     const jsonData = await res.json();
-      //     // setMongoCurrentUser(jsonData);
-      //     // console.log(jsonData)
-      //   } catch (error) {
-      //     console.log(error)
-      //   }
-      // }
-
-      axios.post(`${rootUrl}/users/current-user`, {email: currentUser?.email}).then(res => console.log(res.data)).catch(err => console.log(err))
-  
-      // fetchCurrentUser();
-
 
       setUser(currentUser);
       setUserName(currentUser?.displayName);

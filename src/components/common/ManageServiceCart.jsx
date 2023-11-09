@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ManageServiceCart({ item }) {
+function ManageServiceCart({ item, handleDeleteItem }) {
   return (
     <div className="group sm:flex rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
       <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[200px] sm:w-[250px] sm:h-[350px]">
@@ -11,7 +11,7 @@ function ManageServiceCart({ item }) {
         <div className="p-4 flex flex-col h-full sm:p-6">
           <div className="gap-4 flex flex-wrap">
             <Link to={`/service_update/${item._id}`} type="button" className="px-8 py-3 font-semibold rounded bg-gray-800 text-gray-100">Update</Link>
-            <button type="button" className="px-8 py-3 font-semibold rounded bg-gray-800 text-gray-100">Delete</button>
+            <button type="button" onClick={()=> handleDeleteItem(item._id)} className="px-8 py-3 font-semibold rounded bg-gray-800 text-gray-100">Delete</button>
           </div>
           <h3 className="text-lg sm:text-2xl mt-4 font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white">
             {item?.serviceName}

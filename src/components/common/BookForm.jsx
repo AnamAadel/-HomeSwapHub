@@ -1,4 +1,5 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import { AuthContexts } from '../../context/AuthContext'
 import useAxiosSecure from '../../hooks/useAxiosSecure'
 import DatePicker from './DatePicker'
@@ -21,10 +22,19 @@ function BookForm({detail}) {
     const bookedService = { photoLink, serviceName, description , userEmail , providerEmail, price , date , status: "pending" }
     console.log(bookedService)
 
-    myBaseUrl.post(`/book_service`, bookedService).then((res)=> console.log(res.data)).catch((err)=> console.log(err));
+    myBaseUrl.post(`/book_service`, bookedService).then((res)=> {
+      console.log(res.data)
+      toast.success("Your booking was completed successfully!", {
+        theme: "colored",
+        toastId: "success"
+
+      });
+    }).catch((err)=> console.log(err));
 
   }
   return (
+  <>
+<ToastContainer />
 <div className="min-h-screen">
   <div className=" p-12 bg-white w-full">
     <h1 className="text-xl font-semibold">Hello there ?, <span className="font-normal">please fill in your information to continue</span></h1>
@@ -41,6 +51,7 @@ function BookForm({detail}) {
     </form>
   </div>
 </div>
+  </>
   )
 }
 
