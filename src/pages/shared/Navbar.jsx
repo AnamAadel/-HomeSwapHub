@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContexts } from '../../context/AuthContext';
 
+
+
+function Navbar() {
 const dashboardItem = [
     { name: "Manage services", route: "manage_Service" },
     { name: "Add services", route: "add_service" },
     { name: "My schedules", route: "my_schedules" },
 ];
-
-
-function Navbar() {
     const [showMenu, setShowMenu] = useState(true);
     const checkInput = useRef();
     const navbar = useRef(null);
