@@ -1,25 +1,19 @@
 import axios from "axios";
 
 
-const axiosSecure = axios.create({
-    baseURL: "sellingPointsData.json",
-    withCredentials: true,
-})
+
 
 const myBaseUrl = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://back-end-vercel-seven.vercel.app",
     withCredentials: true,
 })
 
-const axiosTeamData = axios.create({
-    baseURL: "ourTeamData.json",
-    withCredentials: true,
-})
 
-const rootUrl = "http://localhost:5000";
+
+const rootUrl = "https://back-end-vercel-seven.vercel.app";
 
 function useAxiosSecure() {
-  return {axiosSecure, myBaseUrl, axiosTeamData, rootUrl}
+  return { myBaseUrl, rootUrl}
 }
 
 export default useAxiosSecure
