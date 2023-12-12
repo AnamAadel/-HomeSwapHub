@@ -20,10 +20,10 @@ function BookForm({detail}) {
     const date = e.target.price.date;
 
     const bookedService = { photoLink, serviceName, description , userEmail , providerEmail, price , date , status: "pending" }
-    console.log(bookedService)
+    
 
     myBaseUrl.post(`/book_service`, bookedService).then((res)=> {
-      console.log(res.data)
+      
       toast.success("your book wes completed successfully!", {
         theme: "colored",
         toastId: "success"

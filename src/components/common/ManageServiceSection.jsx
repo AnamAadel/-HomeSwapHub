@@ -11,7 +11,7 @@ function ManageServiceSection() {
 
     const handleDeleteItem = (id)=> {
       myBaseUrl.delete(`/my_services/delete/${id}`).then((res)=> {
-        console.log(res.data)
+        
         toast.success("service deleted successfully!", {
           theme: "colored",
           toastId: "success"

@@ -8,8 +8,8 @@ function FeatureState() {
     let num = 0;
     document.addEventListener("aos:in:detect", () => {
       num++;
-      console.log(num)
-      console.log(num % 2 === 0)
+      
+      
 
       if(num % 2 !== 0){
         setIsTrue(true);

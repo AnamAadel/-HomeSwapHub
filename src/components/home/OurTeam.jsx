@@ -6,7 +6,7 @@ import TeamCart from '../common/TeamCart';
 function OurTeam() {
     const [team, setTeam] = useState([]);
     const { myBaseUrl } = useAxiosSecure();
-    console.log(team)
+    
 
     useEffect(() => {
         function fetchData() {

@@ -13,7 +13,7 @@ function Form() {
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
-        console.log(showPassword)
+        
 
     }
 
@@ -28,7 +28,7 @@ function Form() {
     const handleResetPassword = () => {
 
         const email = userEmail.current.value;
-        console.log(email)
+        
         sendPasswordResetEmail(auth, email).then(() => console.log("send email to reset password!")).catch((err1) => console.log(err1));
     }
   return (
