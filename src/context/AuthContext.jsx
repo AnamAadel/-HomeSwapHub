@@ -26,7 +26,7 @@ function AuthProvider({ children }) {
   const storage = getStorage(app)
   const authProviderGoogle = new GoogleAuthProvider();
   const authProviderGithub = new GithubAuthProvider();
-  const {myBaseUrl,  myBaseUrl} = useAxiosSecure(); 
+  const {myBaseUrl} = useAxiosSecure(); 
 
 
   const createUser = (email, password, userName, file) => {
@@ -209,7 +209,7 @@ function AuthProvider({ children }) {
   fetchData()
 
     return unsubscribe
-  }, [auth, myBaseUrl,  myBaseUrl])
+  }, [auth, myBaseUrl])
 
   return (
     <myContext.Provider value={authValue}>

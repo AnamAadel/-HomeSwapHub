@@ -13,7 +13,7 @@ function UpdateService() {
   const loadData = useLoaderData();
   const {user} = AuthContexts();
   
-  const { myBaseUrl, myBaseUrl} = useAxiosSecure()
+  const { myBaseUrl} = useAxiosSecure()
 
   console.log(loadData)
 

@@ -7,7 +7,7 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 function AddService() {
-  const { myBaseUrl, myBaseUrl} = useAxiosSecure()
+  const { myBaseUrl} = useAxiosSecure()
   const navigation = useNavigate();
   const {user} = AuthContexts();
 
